@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Сторінка музичного альбому ВРУБАЙ — Parfeniuk">
     <title>ВРУБАЙ — Parfeniuk</title>
-    <!-- Google Fonts: Inter (основний текст) + Roboto Mono (час треків) -->
+  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <body>
 <div class="page">
 
-    <!-- ШАПКА -->
+   
     <header class="header">
         <div class="logo">
             <span class="logo-symbol">♪</span>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="header-actions">
-            <!-- Перемикач теми -->
+           
             <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
                 <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke="currentColor"
@@ -37,7 +37,7 @@
                 <span id="theme-label">Світла</span>
             </button>
 
-        <!-- SVG-іконка, вбудована в HTML -->
+       
             <svg class="header-icon" width="32" height="32" viewBox="0 0 24 24"
                  fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M9 18V5L21 3V16" stroke="currentColor" stroke-width="2"
@@ -48,7 +48,7 @@
         </div>
     </header>
 
-    <!-- АЛЬБОМ -->
+  
     <section class="album">
         <div class="album-cover">
             <img
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    <!-- ТРЕК-ЛИСТ -->
+    
     <main class="tracklist">
         <h2 class="tracklist-title">Трек-Лист</h2>
 
@@ -196,7 +196,7 @@
         </table>
     </main>
 
-    <!-- ПЛЕЄР -->
+  
     <footer class="player">
         <div class="player-track">
             <div class="mini-cover">
@@ -256,17 +256,17 @@
     audio.addEventListener('play',  () => playBtn.textContent = '❚❚');
     audio.addEventListener('pause', () => playBtn.textContent = '▶');
 
-    /* ===== ПЕРЕМИКАЧ ТЕМИ (темна / світла) ===== */
+   
     const themeBtn   = document.getElementById('theme-toggle');
     const themeLabel = document.getElementById('theme-label');
 
     function updateThemeButton() {
         const light = document.body.classList.contains('light-theme');
-        themeLabel.textContent = light ? 'Темна' : 'Світла';   // що буде після кліку
+        themeLabel.textContent = light ? 'Темна' : 'Світла';   
         themeBtn.setAttribute('aria-pressed', light);
     }
 
-    // відновлюємо збережену тему
+    
     try {
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-theme');
@@ -275,7 +275,7 @@
     updateThemeButton();
 
     themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');   // classList.toggle
+        document.body.classList.toggle('light-theme');   
         updateThemeButton();
         try {
             localStorage.setItem('theme',
